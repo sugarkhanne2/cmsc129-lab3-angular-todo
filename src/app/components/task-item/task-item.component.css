@@ -1,0 +1,264 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.task-item.completed {
+  opacity: 0.7;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Checkbox styling */
+.checkbox-container {
+  margin-right: 16px;
+}
+
+.task-checkbox {
+  display: none;
+}
+
+.task-checkbox + label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #e6e6e6;
+  border: 2px solid #999;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task-checkbox:checked + label {
+  background-color: #4db6ac;
+  border-color: #4db6ac;
+}
+
+.task-checkbox:checked + label::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+
+/* Task content */
+.task-content {
+  flex-grow: 1;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  margin-right: 12px;
+}
+
+.priority-badge.high {
+  background-color: #f44336;
+}
+
+.priority-badge.mid {
+  background-color: #ff9800;
+}
+
+.priority-badge.low {
+  background-color: #4caf50;
+}
+
+.task-title {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.task-details {
+  color: #666;
+  font-size: 13px;
+}
+
+.task-date {
+  margin-bottom: 2px;
+}
+
+.task-date .label {
+  font-weight: 500;
+}
+
+/* Action buttons */
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #4db6ac;
+}
+
+.delete-btn {
+  background-color: #f44336;
+}
+
+.action-btn:hover {
+  opacity: 0.85;
+}
+
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Edit form styling */
+.edit-form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.edit-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.edit-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.edit-content {
+  padding: 0 8px;
+}
+
+.edit-group {
+  margin-bottom: 16px;
+}
+
+.edit-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.edit-group.half {
+  flex: 1;
+}
+
+.edit-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.edit-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.priority-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.priority-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.priority-btn.active {
+  color: white;
+  border-color: transparent;
+}
+
+.priority-btn.active:nth-child(1) {
+  background-color: #f44336; /* High priority */
+}
+
+.priority-btn.active:nth-child(2) {
+  background-color: #ff9800; /* Medium priority */
+}
+
+.priority-btn.active:nth-child(3) {
+  background-color: #4caf50; /* Low priority */
+}
+
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.save-btn, .cancel-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-btn {
+  background-color: #4db6ac;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.save-btn:hover, .cancel-btn:hover {
+  opacity: 0.9;
+}

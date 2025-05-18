@@ -1,0 +1,8 @@
+<div class="container">
+    <app-header></app-header>
+    <app-task-list></app-task-list>
+    
+    <div class="modal-overlay" *ngIf="showAddTaskForm">
+      <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
+    </div>
+  </div>

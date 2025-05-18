@@ -1,0 +1,38 @@
+<div class="sort-container">
+  <span class="sort-label">Sort by:</span>
+  <div class="sort-buttons">
+    <button 
+      class="sort-btn" 
+      [ngClass]="{'active': sortBy === 'dateAdded'}" 
+      (click)="setSortBy('dateAdded')">
+      Date Added {{ sortBy === 'dateAdded' ? (sortDirection === 'asc' ? '↑' : '↓') : '' }}
+    </button>
+    <button 
+      class="sort-btn" 
+      [ngClass]="{'active': sortBy === 'dueDate'}" 
+      (click)="setSortBy('dueDate')">
+      Due Date {{ sortBy === 'dueDate' ? (sortDirection === 'asc' ? '↑' : '↓') : '' }}
+    </button>
+    <button 
+      class="sort-btn" 
+      [ngClass]="{'active': sortBy === 'priority'}" 
+      (click)="setSortBy('priority')">
+      Priority {{ sortBy === 'priority' ? (sortDirection === 'asc' ? '↑' : '↓') : '' }}
+    </button>
+  </div>
+</div>
+
+<div class="task-list">
+  <div *ngIf="tasks.length === 0" class="empty-message">
+    No tasks to show. Add a new task to get started!
+  </div>
+  
+  <div *ngFor="let task of tasks" class="task-card">
+    <app-task-item
+      [task]="task"
+      (taskDeleted)="deleteTask($event)"
+      (taskUpdated)="updateTask($event)"
+    >
+    </app-task-item>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.select{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.select label{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.select select{
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.select select:hover {
+    border-color: #007bff;
+}
