@@ -1,49 +1,33 @@
-.add-task-container {
-  width: 400px;
+/* add-task.component.css */
+.task-form-container {
+  background-color: white;
   border-radius: 8px;
-  overflow: hidden;
-  background-color: #1e2738;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-.add-task-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background-color: #1e2738;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.add-task-header h2 {
+.form-title {
+  color: #333;
+  padding: 15px 20px;
   margin: 0;
-  color: white;
-  font-size: 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 18px;
   font-weight: 500;
 }
 
-.close-btn {
-  background-color: #ff0000;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.add-task-form {
+.form-content {
   padding: 20px;
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .form-row {
   display: flex;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .form-group.half {
@@ -52,40 +36,39 @@
 
 label {
   display: block;
-  margin-bottom: 6px;
-  color: white;
+  margin-bottom: 5px;
+  color: #555;
   font-weight: 500;
 }
 
-input {
+.form-control {
   width: 100%;
-  padding: 12px;
-  border: none;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #e9e9e9;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .priority-buttons {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .priority-btn {
   flex: 1;
   padding: 10px;
-  border: none;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #e9e9e9;
+  background-color: #f8f8f8;
   color: #333;
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.2s;
 }
 
 .priority-btn.active {
   color: white;
-  font-weight: 600;
+  border: none;
+  font-weight: 500;
 }
 
 .priority-btn.active:nth-child(1) {
@@ -93,7 +76,7 @@ input {
 }
 
 .priority-btn.active:nth-child(2) {
-  background-color: #ff9800;
+  background-color: #2196f3;
 }
 
 .priority-btn.active:nth-child(3) {
@@ -102,35 +85,31 @@ input {
 
 .form-actions {
   display: flex;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.submit-btn {
+.btn {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   border: none;
   border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-btn {
   background-color: #4db6ac;
   color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .cancel-btn {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
   background-color: #f44336;
   color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.submit-btn:hover,
+.save-btn:hover,
 .cancel-btn:hover {
   opacity: 0.9;
 }

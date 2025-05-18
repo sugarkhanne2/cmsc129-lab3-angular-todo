@@ -1,0 +1,30 @@
+/* Create a new file app.component.css or update your existing one */
+
+.app-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  /* Overlay that appears when add task form is shown */
+  .backdrop-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* For Safari */
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Form container styling - ensures the form appears above the overlay */
+  .form-container {
+    position: relative;
+    z-index: 101;
+    /* No need for additional styling as your form already has its own styles */
+  }

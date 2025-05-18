@@ -17,6 +17,7 @@ export class TaskItemComponent {
   @Output() taskUpdated = new EventEmitter<Task>();
 
   isEditing = false;
+  showDeleteDialog = false;
   editableTask: Task = {} as Task;
 
   constructor(private taskService: TaskService) {}
@@ -33,10 +34,20 @@ export class TaskItemComponent {
     this.taskUpdated.emit(this.task);
   }
 
-  deleteTask() {
-    if (confirm('Are you sure you want to delete this task?')) {
-      this.taskDeleted.emit(this.task.id);
-    }
+  /** Opens the delete confirmation dialog */
+  openDeleteDialog() {
+    this.showDeleteDialog = true;
+  }
+
+  /** Confirms task deletion */
+  confirmDelete() {
+    this.taskDeleted.emit(this.task.id);
+    this.showDeleteDialog = false;
+  }
+
+  /** Cancels the delete action */
+  cancelDelete() {
+    this.showDeleteDialog = false;
   }
 
   editTask() {
