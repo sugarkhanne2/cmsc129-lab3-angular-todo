@@ -1,0 +1,73 @@
+<div class="time-picker-container">
+    <div class="time-input-container">
+      <input 
+        type="text" 
+        [value]="formattedTime" 
+        readonly
+        class="form-control" 
+        placeholder="--:-- --"
+        (click)="toggleTimePicker()"
+      />
+      <div class="time-icon" (click)="toggleTimePicker()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+      </div>
+    </div>
+    
+    <div class="time-dropdown" *ngIf="showTimePicker">
+      <div class="time-picker-header">
+        <div class="time-section">
+          <div class="time-controls">
+            <button class="time-nav-btn" (click)="changeHour(1)">
+              <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </button>
+            <span>{{ selectedHour.toString().padStart(2, '0') }}</span>
+            <button class="time-nav-btn" (click)="changeHour(-1)">
+              <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="time-divider">:</div>
+        <div class="time-section">
+          <div class="time-controls">
+            <button class="time-nav-btn" (click)="changeMinute(1)">
+              <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </button>
+            <span>{{ selectedMinute.toString().padStart(2, '0') }}</span>
+            <button class="time-nav-btn" (click)="changeMinute(-1)">
+              <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="time-section period">
+          <div class="time-controls">
+            <button class="time-nav-btn" (click)="togglePeriod()">
+              <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </button>
+            <span>{{ period }}</span>
+            <button class="time-nav-btn" (click)="togglePeriod()">
+              <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="time-picker-footer">
+        <button class="time-btn clear-btn" (click)="clearTime()">Clear</button>
+        <button class="time-btn apply-btn" (click)="applyTime()">Apply</button>
+      </div>
+    </div>
+  </div>

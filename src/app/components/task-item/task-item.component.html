@@ -30,9 +30,9 @@
       </div>
       <div class="task-date">
         <span class="label">Due:</span> 
-        {{ task.dueDate | date:'yyyy-MM-dd' }} at {{ task.dueTime }}
+        {{ task.dueDate | date:'MMM d, y' }} at {{ formatTimeWithAmPm(task.dueTime) }}
       </div>
-    </div>
+      </div>
   </div>
 
   <!-- Task Actions -->

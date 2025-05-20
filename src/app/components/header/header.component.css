@@ -12,9 +12,24 @@ h1 {
   color: white;
 }
 
-.add-btn {
-  background-color: #4db6ac;
+.btn {
   padding: 8px 20px;
   border-radius: 4px;
   font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-btn {
+  background-color: #4db6ac;
+}
+
+.close-btn {
+  background-color: #f44336;
+}
+
+.btn:hover {
+  opacity: 0.9;
 }

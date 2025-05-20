@@ -11,7 +11,6 @@ export class TaskService {
   showAddForm$ = this.showAddFormSubject.asObservable();
 
   constructor() {
-    // Initialize with some tasks or load from localStorage
     this.loadTasks();
   }
 
@@ -35,8 +34,8 @@ export class TaskService {
 
   // Add a new task
   addTask(task: Task): void {
-    task.id = Date.now(); // Generate unique ID based on timestamp
-    task.createdAt = new Date().toISOString(); // Add creation date
+    task.id = Date.now(); 
+    task.createdAt = new Date().toISOString();
     this.tasks.push(task);
     this.saveTasks();
   }
@@ -55,7 +54,7 @@ export class TaskService {
     this.saveTasks();
   }
 
-  // Toggle add task form visibility
+  // Toggle add task form 
   toggleAddTaskForm(): void {
     this.showAddFormSubject.next(!this.showAddFormSubject.value);
   }

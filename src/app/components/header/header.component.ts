@@ -11,8 +11,13 @@ import { TaskService } from '../../services/task.service';
 })
 export class HeaderComponent {
   title = 'Task Tracker';
+  showAddTaskForm = false;
   
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService) {
+    this.taskService.showAddForm$.subscribe(
+      (value) => (this.showAddTaskForm = value)
+    );
+  }
   
   toggleAddTask() {
     this.taskService.toggleAddTaskForm();

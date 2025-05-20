@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../../models/task';
 import { TaskService } from '../../services/task.service';
+import { TimePickerComponent } from '../time-picker/time-picker.component';
 
 @Component({
   selector: 'app-add-task',
   standalone: true,
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css'],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TimePickerComponent],
 })
 export class AddTaskComponent {
   @Output() taskAdded = new EventEmitter<Task>();
@@ -17,7 +18,7 @@ export class AddTaskComponent {
   title: string = '';
   dueDate: string = '';
   dueTime: string = '';
-  priority: 'High' | 'Mid' | 'Low' = 'Mid';
+  priority: 'High' | 'Mid' | 'Low' = 'Low';
   
   constructor(private taskService: TaskService) {}
   

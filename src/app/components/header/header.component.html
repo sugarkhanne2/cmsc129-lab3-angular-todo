@@ -1,4 +1,9 @@
 <header>
   <h1>{{ title }}</h1>
-  <button class="btn add-btn" (click)="toggleAddTask()">Add</button>
+  <button 
+    class="btn"
+    [ngClass]="{'add-btn': !showAddTaskForm, 'close-btn': showAddTaskForm}"
+    (click)="toggleAddTask()">
+    {{ showAddTaskForm ? 'Close' : 'Add' }}
+  </button>
 </header>

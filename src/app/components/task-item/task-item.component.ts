@@ -23,18 +23,15 @@ export class TaskItemComponent {
   constructor(private taskService: TaskService) {}
 
   ngOnInit() {
-    // Initialize editableTask to avoid "undefined" errors
     this.editableTask = { ...this.task };
   }
 
-  /** Toggles the completion status of a task */
   toggleDone() {
     this.task.completed = !this.task.completed;
     this.taskService.updateTask(this.task);
     this.taskUpdated.emit(this.task);
   }
 
-  /** Opens the delete confirmation dialog */
   openDeleteDialog() {
     this.showDeleteDialog = true;
   }
@@ -52,12 +49,12 @@ export class TaskItemComponent {
 
   editTask() {
     this.isEditing = true;
-    this.editableTask = { ...this.task }; // Copy current task values
+    this.editableTask = { ...this.task }; 
   }
 
   saveEdit() {
     this.taskService.updateTask(this.editableTask);
-    this.task = { ...this.editableTask }; // Update the current task with edited values
+    this.task = { ...this.editableTask }; 
     this.taskUpdated.emit(this.task);
     this.isEditing = false;
   }
@@ -68,5 +65,19 @@ export class TaskItemComponent {
   
   setPriority(priority: 'High' | 'Mid' | 'Low') {
     this.editableTask.priority = priority;
+  }
+
+  formatTimeWithAmPm(time: string): string {
+    if (!time) return '';
+    
+    const [hours, minutes] = time.split(':').map(Number);
+    
+    if (isNaN(hours) || isNaN(minutes)) return time;
+    
+    const period = hours >= 12 ? 'PM' : 'AM';
+    
+    const hours12 = hours % 12 || 12;
+    
+    return `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`;
   }
 }
